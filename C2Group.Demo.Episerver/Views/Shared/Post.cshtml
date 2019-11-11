@@ -1,0 +1,19 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+@model C2Group.Demo.Episerver.Models.Blocks.PostBlock
+
+@{
+   var asChange = (IChangeTrackable)Model;   
+}
+
+<div class="post">
+    <p class="header">
+        @Model.HeaderCopy
+    </p>
+    <p class="copy">
+        @Model.MainCopy
+    </p>
+    <p class="author-line">
+        Posted by <span class="author">@Model.AuthorName</span> on @asChange.Changed.ToString("MMMM dd, yyyy")
+    </p>
+</div>

@@ -1,0 +1,22 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model C2Group.Demo.Episerver.Models.Pages.PostPage
+
+<section class="content-main">
+    <div class="container">
+        <div class="columns is-mobile is-centered">
+            <div class="column is-half">
+                @Html.PropertyFor(x => x.MainBody)
+
+                @foreach (var contentAreaItem in Model.Posts.Items)
+                {
+                    Html.RenderPartial("~/Views/Shared/Post.cshtml", contentAreaItem.GetContent());
+                }
+                <div class="paging-container">
+                    <a class="button paging-nav-btn">older posts <span class="arrow">&#10230;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

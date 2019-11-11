@@ -1,0 +1,68 @@
+﻿@using EPiServer.Framework.Web.Mvc.Html
+
+@model C2Group.Demo.Episerver.Models.Pages.StandardPage
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>c2 group demo blog</title>
+    <link rel="stylesheet" href="~/dist/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                Technology Blog
+            </div>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                @Html.PageLink("Home", Model.HomePageReference, null, new { @class = "navbar-item" })
+                @*<a href="/home" class="navbar-item">
+                    Home
+                </a>*@
+                @*<a href="/about" class="navbar-item">
+                    About
+                </a>*@
+                @Html.PageLink("About", Model.AboutPageReference, null, new { @class = "navbar-item" })
+                <a href="sample-post.html" class="navbar-item">
+                    Sample Post
+                </a>
+                @*<a href="/contact" class="navbar-item">
+                    Contact
+                </a>*@
+                @Html.PageLink("Contact", Model.ContactPageReference, null, new { @class = "navbar-item" })
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="header-container">
+            <img class="desktop" src="@Url.ContentUrl(Model.ImageDesktop)" />
+            <img class="mobile" src="@Url.ContentUrl(Model.ImageMobile)" />
+            <div class="teaser-container">
+                <div class="teaser-copy-title">
+                    @Model.TeaserBlock.TeaserTitle
+                    <div class="teaser-divider"></div>
+                </div>
+                <div class="teaser-copy">
+                    @Model.TeaserBlock.TeaserCopy
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+        @Html.Partial("Footer")
+    </section>
+    <script src="~/dist/js/bulma.js"></script>
+</body>
+
+</html>

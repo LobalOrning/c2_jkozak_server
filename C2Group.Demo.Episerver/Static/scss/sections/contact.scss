@@ -1,0 +1,45 @@
+.submit-btn {
+    border-radius: 0;
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#contact-form-container, .Form__MainBody {
+    font-family: 'Times New Roman', Times, serif;
+    /*label.Form__Element__Caption {
+        display: none;
+    }*/
+    .textarea {
+        resize: none;
+    }
+
+    input[type=text], input[type=number], textarea, .FormTextbox__Input {
+        border-left: none;
+        border-radius: 0;
+        border-right: none;
+        border-top: 0;
+        box-shadow: none;
+        font-family: 'Times New Roman', Times, serif;
+
+        &.is-danger {
+            color: $danger;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        background-color: #fff;
+        border: 1px solid #dedede;
+        border-radius: 0;
+        color: #000;
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 20px 0;
+    }
+}

@@ -1,0 +1,17 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+@model C2Group.Demo.Episerver.Models.Pages.ContactPage
+
+<section class="content-main">
+    <div class="container">
+        <div class="columns is-mobile is-centered">
+            <div class="column is-half">
+                @Html.PropertyFor(x => x.MainBody)
+                <div id="contact-form-container">
+                    @Html.PropertyFor(x => x.ContactForm)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
